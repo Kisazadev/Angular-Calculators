@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- load bootstrap & custom css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- load angular via CDN -->
+
+</head>
+<body >
+  <div class="container">
+
+      <div ng-controller="textController">
+
+          <h1> {{ title }}!</h1>
+
+      </div>
+</div>
+
+  <form ng-controller = "StartupController">
+
+    Today (Actual): <input ng-change="computeDaily()" ng-model="funding.dailycount"><br/>
+    <br />
+    This Month: <input ng-chang="computeMonthly()" ng-model="funding.monthcount"><br />
+    <br />
+
+    <b>Based on today:</b><br/>
+    Predicted payment: {{funding.dailyaftertax  | currency:"USD $"}} <br/>
+    <b>Based on month:</b><br/>
+    Predicted payment: {{funding.monthlyaftertax | currency:"USD $"}}  <br/>
+
+
+
+
+  </form>
+</div>
+</body>
+<script src="https://code.angularjs.org/1.4.5/angular.js"></script>
+<script src="app.js"></script>
+
+</html>
